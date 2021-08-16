@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpodIgly-Main", "SpodIgly-Main.csproj", "{00CB1CE5-E48F-4817-A4B1-D6F5E1C2C91F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpodIgly-Main.Tests", "..\SpodIgly-Main.Tests\SpodIgly-Main.Tests.csproj", "{9A40CE0D-D30E-4A8A-8441-FD0EC0F55289}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{00CB1CE5-E48F-4817-A4B1-D6F5E1C2C91F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00CB1CE5-E48F-4817-A4B1-D6F5E1C2C91F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00CB1CE5-E48F-4817-A4B1-D6F5E1C2C91F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00CB1CE5-E48F-4817-A4B1-D6F5E1C2C91F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A40CE0D-D30E-4A8A-8441-FD0EC0F55289}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A40CE0D-D30E-4A8A-8441-FD0EC0F55289}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A40CE0D-D30E-4A8A-8441-FD0EC0F55289}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A40CE0D-D30E-4A8A-8441-FD0EC0F55289}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C0EA8A90-CA79-4715-A9EA-B5F37FB8A4AC}
+	EndGlobalSection
+EndGlobal
