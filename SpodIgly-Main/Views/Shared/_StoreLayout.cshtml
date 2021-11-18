@@ -1,6 +1,6 @@
 ﻿
 @{
-    Layout = null;
+    
 }
 
 <!DOCTYPE html>
@@ -8,9 +8,9 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>_StoreLayout</title>
+    <title>@ViewBag.Title</title>
 
-    <link href="@Url.Content("~Content/Site.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" />
 </head>
 <body>
     <header>
@@ -43,7 +43,7 @@
             </ul>
         </nav>
         <div id="footer-cd-logo">
-            <img src="@Url.Content("~Content/images/footer-cd.png ")" />
+            <img src="@Url.Content("~/Content/images/footer-cd.png ")" />
         </div>
 
         <div id="footer-copyright">
