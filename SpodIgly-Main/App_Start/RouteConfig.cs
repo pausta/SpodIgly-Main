@@ -31,7 +31,7 @@ namespace SpodIgly_Main
             routes.MapRoute(
 
                 name: "ProductList",
-                url: "gatunki/{genrename} .html",
+                url: "gatunki/{genrename}",
                 defaults: new { controller = "Store", action = "List" },
                 constraints: new { genrename = @"[\w& ]+"}
                 );
