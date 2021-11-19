@@ -19,6 +19,8 @@ namespace SpodIglyMVC.Controllers
 
 			// Logowanie...
 		}
+
+
 		public ActionResult StaticContent(string viewname)      // utworzenie akcji z RouteConfig w kontrolerze Home()
 		{
 			// Wprowadzam jakieś zmiany....
