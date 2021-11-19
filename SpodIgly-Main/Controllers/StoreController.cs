@@ -13,5 +13,16 @@ namespace SpodIgly_Main.Controllers
         {
             return View();
         }
+
+        public ActionResult Details(int id)    // nazwa musi być taka sama jak w argumencie metody w Route Config {id}
+        {
+            return View();
+        }
+        public ActionResult List(string genrename)
+        {
+            return View();
+        }
+
+
     }
 }

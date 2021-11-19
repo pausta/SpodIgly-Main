@@ -25,7 +25,7 @@ namespace SpodIgly_Main
 
                 name: "StaticPages",
                 url: "strony/{viewname}.html",
-                defaults: new { controller = "Home", action = "StaticConect" }
+                defaults: new { controller = "Home", action = "StaticContent" }   // Action musi być utworzony w Home Controller (NIE w Store controller)
                 );
 
             routes.MapRoute(

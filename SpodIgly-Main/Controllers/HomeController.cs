@@ -23,9 +23,9 @@ namespace SpodIglyMVC.Controllers
 		{
 			// Wprowadzam jakieś zmiany....
 
-			return View();
+			return View(viewname);  // można od razu zaimplementować,  bo zwraca widok o nazwie ViewName (lekcja Routing)
 
-			// Logowanie...
+			
 		}
 
 
