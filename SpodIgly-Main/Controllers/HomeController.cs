@@ -16,10 +16,11 @@ namespace SpodIglyMVC.Controllers
 		// GET: /Home/
         public ActionResult Index()
 		{
-			Genre newGenre = new Genre { Name = "Rock", Description = "Opis gatunku", IconFilename = "1.png" }; // utworzenie klasy Genre
+			//Genre newGenre = new Genre { Name = "Rock", Description = "Opis gatunku", IconFilename = "1.png" }; // utworzenie klasy Genre
+			//db.Genres.Add(newGenre);
+			//db.SaveChanges(); //zapisanie zmian. Jeśli po włączeniu nie ma błedu - jest OK.
 
-			db.Genres.Add(newGenre);
-			db.SaveChanges(); //zapisanie zmian. Jeśli po włączeniu nie ma błedu - jest OK.
+			var genresList = db.Genres.ToList();
 
             return View();
 

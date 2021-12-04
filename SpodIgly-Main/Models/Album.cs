@@ -12,7 +12,7 @@ namespace SpodIgly_Main.Models
         public string AlbumTitle { get; set; }
         public string ArtistName { get; set; }    // dla artystów można by zrobić osobną tabelkę ale tutaj wyjątkowo nie
         public DateTime DateAdded { get; set; }    // informacje kiedy album został dodany do systemu dla admina
-        public string CovertFileName { get; set; }   // nazwa pliku okładki
+        public string CoverFileName { get; set; }   // nazwa pliku okładki
         public string Description { get; set; }    // opis albumu
         public decimal Price { get; set; }
         public bool isBestseller { get; set; }
