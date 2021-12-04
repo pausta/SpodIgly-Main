@@ -10,6 +10,10 @@ namespace SpodIgly_Main.DAL
     // w tym momencie dodajemy references w Odwolania - NuGet i pobieramy paczkę EntityFramework z zależnościami
     public class StoreContext : DbContext    // Storecontext -  reprezentuje całą bazę danych
     {  
+        public StoreContext() : base("StoreContext") // z pomocą tej klasy komunikujemy się bazą danych
+        {
+
+        }
         // w tej klasie chcemy mieć trzy tabelki:
         public DbSet<Album> Albums { get; set; }  // DbSet  - pojedyncze tabelki tej bazy danych
         public DbSet<Genre> Genres { get; set; }

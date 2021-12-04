@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SpodIgly_Main.DAL;
+using SpodIgly_Main.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -7,13 +9,17 @@ using System.Web.Mvc;
 namespace SpodIglyMVC.Controllers
 {
 	public class HomeController : Controller
-	{        
+	{
 
+		private StoreContext db = new StoreContext();    //CTRL + Kropka aby dodać referencje, zadeklarowanie name space
 		//
 		// GET: /Home/
         public ActionResult Index()
 		{
-			// Wprowadzam jakieś zmiany....
+			Genre newGenre = new Genre { Name = "Rock", Description = "Opis gatunku", IconFilename = "1.png" }; // utworzenie klasy Genre
+
+			db.Genres.Add(newGenre);
+			db.SaveChanges(); //zapisanie zmian. Jeśli po włączeniu nie ma błedu - jest OK.
 
             return View();
 

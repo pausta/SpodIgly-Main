@@ -27,7 +27,7 @@ namespace SpodIgly_Main.Models
         public OrderState Orderstate { get; set; }  // informacja: jaki jest stan zamówienia w typie ENUM zamiast int, które stworzymy zaraz
 
         public decimal TotalPrice { get; set; }
-        public List<OrderItem> OrderItems { get; set}  // zaraz stworzymy klasę OrderItem reprezentujacą pojedynczy wpis naszego zamówienia
+        public List<OrderItem> OrderItems { get; set; }  // zaraz stworzymy klasę OrderItem reprezentujacą pojedynczy wpis naszego zamówienia
     }
 
     public enum OrderState  // enum, które ma dwa stany: NEW i SHIPPED

@@ -12,7 +12,7 @@ namespace SpodIgly_Main.Models
         public string Description { get; set; }
         public string IconFilename { get; set; }  // właściwość z nazwą pliku graficznego ikony, wyświetlany obok nazwy kategorii
 
-        public virtual ICollection<Album> Albums { get; set; }  // pozwoli nam automatycznie (bez zapytań) uzyskać kolekcję albumów (z tego jednego gatunku)
+        public virtual ICollection<Album> Albums { get; set; }  // wlasciwosc nawigacyjne - naviation property - pozwoli nam automatycznie (bez zapytań) uzyskać kolekcję albumów (z tego jednego gatunku)
 
     }
 }
