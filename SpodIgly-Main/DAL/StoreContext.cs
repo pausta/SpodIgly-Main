@@ -17,7 +17,7 @@ namespace SpodIgly_Main.DAL
 
         static StoreContext() //STATYCZNY KONSTRUKTOR KTÓRY WYWOŁYWANY JEST TYLKO RAZ -->  III sposób na korzystanie z naszego Initializatora - kolejne mogą być w WEBCONFIG i GLOBALASAX
         {
-            Database.SetInitializer<StoreContext>(new StoreInitializer()); 
+            Database.SetInitializer<StoreContext>(new StoreInitializer());
         }
 
 

@@ -255,6 +255,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202112051046199_InitialCreate.cs" />
+    <Compile Include="Migrations\202112051046199_InitialCreate.designer.cs">
+      <DependentUpon>202112051046199_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202112051056414_AddeNewArrivals.cs" />
+    <Compile Include="Migrations\202112051056414_AddeNewArrivals.designer.cs">
+      <DependentUpon>202112051056414_AddeNewArrivals.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Album.cs" />
     <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\Order.cs" />
@@ -281,6 +290,14 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202112051046199_InitialCreate.resx">
+      <DependentUpon>202112051046199_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112051056414_AddeNewArrivals.resx">
+      <DependentUpon>202112051056414_AddeNewArrivals.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,24 +1,28 @@
-﻿using SpodIgly_Main.Models;
+﻿using SpodIgly_Main.Migrations;
+using SpodIgly_Main.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Web;
+using System.Text;
+using System.Threading.Tasks;
+using System.Data.Entity.Migrations;  // potrzebne do "AddOrUpdate"
 
 namespace SpodIgly_Main.DAL
 {
-    public class StoreInitializer : DropCreateDatabaseAlways<StoreContext>
-    // DropCreateDatabaseIfModelChanges<> --> Bazowy Initializer, który po podaniu nazwy naszego StoreContext - po zmianie czegoś (w którejś klasie) w naszej bazie baza zostanie automatycznie usunięta i założona jeszcze raz
-    // DropCreateDatabaseAlways<> -> zawsze przy uruchomieniu naszej aplikacji, nasza databasa jest niszczona i zaczynamy od nowej, pustej bazy lub danymi wprowadzonymi przez nasz Inicjalizator
-
+    public class StoreInitializer : MigrateDatabaseToLatestVersion<StoreContext, Configuration>
     {
-        protected override void Seed(StoreContext context)  // musimy nadpisać jedną z metod  Seed - podstawowa metoda Inicjalizatora, w której możemy wypełnić nasz Context przykładowymi danymi 
-        {
-            SeedStoreData(context);  // przekazujemy context (czyli argument metody Seed)
-            base.Seed(context);
-        }
+        // DropCreateDatabaseIfModelChanges<> --> Bazowy Initializer, który po podaniu nazwy naszego StoreContext - po zmianie czegoś (w którejś klasie) w naszej bazie baza zostanie automatycznie usunięta i założona jeszcze raz
+        // DropCreateDatabaseAlways<> -> zawsze przy uruchomieniu naszej aplikacji, nasza databasa jest niszczona i zaczynamy od nowej, pustej bazy lub danymi wprowadzonymi przez nasz Inicjalizator
+        // MigrateDatabaseToLatestVersion - inicjalizator który sprawdza czy BAZA jest w najnowszej wersji, jeśli nie to będą wywoływane potrzebne migracje (czyli automatycznie wywołuje komendę Update-Database) --> wymaga 2 parametrów!
+        //protected override void Seed(StoreContext context)  // musimy nadpisać jedną z metod  Seed - podstawowa metoda Inicjalizatora, w której możemy wypełnić nasz Context przykładowymi danymi 
+        
+        //{
+        //    SeedStoreData(context);  // przekazujemy context (czyli argument metody Seed)
+        //    base.Seed(context);
+        //}
 
-        private void SeedStoreData(StoreContext context)
+        public static void SeedStoreData(StoreContext context)
         {
             var genres = new List<Genre>
             {
@@ -36,7 +40,7 @@ namespace SpodIgly_Main.DAL
                 new Genre() { GenreID = 12, Name="Promocje", IconFilename = "promos.png" },
             };
 
-            genres.ForEach(g => context.Genres.Add(g)); // wyrażenie link czyli wywowalnie dla kazdego elementu (gatunku) polecenia Add (czyli dodanie dla naszego contextu każdego elementu z listy)
+            genres.ForEach(g => context.Genres.AddOrUpdate(g)); // wyrażenie link czyli wywowalnie dla kazdego elementu (gatunku) polecenia Add (czyli dodanie dla naszego contextu każdego elementu z listy)
             context.SaveChanges();  // zapisanie danych gdzieś w naszej bazie
 
             var albums = new List<Album>
@@ -51,7 +55,7 @@ namespace SpodIgly_Main.DAL
                 new Album() { AlbumID = 8, ArtistName = "Jamaican Cowboys", AlbumTitle = "IceTeam Quantanamera", Price = 21, CoverFileName = "8.png", isBestseller = false, DateAdded = new DateTime(2014, 04, 2), GenreID = 2 },
                 new Album() { AlbumID = 9, ArtistName = "Str8ts", AlbumTitle = "Sneakers Only", Price = 25, CoverFileName = "9.png", isBestseller = false, DateAdded = new DateTime(2014, 04, 2), GenreID = 2 }
             };
-            albums.ForEach(a => context.Albums.Add(a));
+            albums.ForEach(a => context.Albums.AddOrUpdate(a));
             context.SaveChanges();
         }
     }

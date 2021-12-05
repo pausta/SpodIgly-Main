@@ -18,6 +18,7 @@ namespace SpodIgly_Main.Models
         public bool isBestseller { get; set; }
         public bool isHidden { get; set; }
 
+        public bool isNewArrival { get; set; }
 
         public virtual Genre Genre { get; set; }// wlasciwosc nawigacyjna która pozwoli nam dostawać się do obiektu Gatunków (Genre) powiązanym z obiektem Albumu (pozwala uzyskać jeden gatunek)
 
