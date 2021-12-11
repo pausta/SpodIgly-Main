@@ -1,10 +1,13 @@
 ﻿using SpodIgly_Main.DAL;
 using SpodIgly_Main.Models;
+using SpodIgly_Main.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+
+
 
 namespace SpodIglyMVC.Controllers
 {
@@ -16,15 +19,23 @@ namespace SpodIglyMVC.Controllers
 		// GET: /Home/
         public ActionResult Index()
 		{
-			//Genre newGenre = new Genre { Name = "Rock", Description = "Opis gatunku", IconFilename = "1.png" }; // utworzenie klasy Genre
-			//db.Genres.Add(newGenre);
-			//db.SaveChanges(); //zapisanie zmian. Jeśli po włączeniu nie ma błedu - jest OK.
+			var genres = db.Genres.ToList();
+			var newArrivals = db.Albums.Where(a => !a.isHidden).OrderByDescending(a => a.DateAdded).Take(3).ToList();
+			var bestsellers = db.Albums.Where(a => !a.isHidden && a.isBestseller).OrderBy(g => Guid.NewGuid()).Take(3).ToList();
 
-			var genresList = db.Genres.ToList();
+			var vm = new HomeViewModel()
+			{
+				Bestsellers = bestsellers,
+				Genres = genres,
+				NewArrivals = newArrivals
 
-            return View();
 
-			// Logowanie...
+			};
+
+			// mechanizm widoków (zamiast ViewBag) do silnie typowanego widoku. Chcemy tu zwrócić do widoku Index
+
+			return View(vm);
+
 		}
 
 
